@@ -1,5 +1,6 @@
 #lang racket
 
+(provide (all-defined-out))
 
 (define (hexchar->integer c)
   (cond [(char<=? #\0 c #\9) (- (char->integer c) (char->integer #\0))]
@@ -50,10 +51,11 @@
        (list->string (map integer->b64char (bytes->six-bit-list cur-sub)))
       ))))
 
-
-
-(define hex-input "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d")
-
-(define result (bytes->b64 (hex->bytes hex-input)))
-
-(println result)
+(let* ([cmdln (current-command-line-arguments)]
+      [run? (with-handlers ([exn:fail? (lambda (exn) #f)])
+		  (equal? "run" (vector-ref cmdln 0)))])
+  (when run?
+    (let* ([hex-input "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"]
+	  [result (bytes->b64 (hex->bytes hex-input))])
+      (println result)
+      )))
