@@ -3,7 +3,7 @@
 solutions to the [cryptopals](https://cryptopals.com/) crypto challenges in Racket organized by problem set
 
 - filenames take the format `x_y.rkt` where x is the problem set and y is the challenge number
-- **progress so far** - completed set1: 1,2,3
+- **progress so far** - completed set1: 1,2,3,4
 
 ## Notes
 ### Set 1
