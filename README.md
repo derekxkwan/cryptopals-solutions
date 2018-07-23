@@ -8,4 +8,4 @@ solutions to the [cryptopals](https://cryptopals.com/) crypto challenges in Rack
 ## Notes
 ### Set 1
 - my custom functions for hex encoding/decoding and base64 encoding are found in `set_1/hex_base64.rkt`, which is called by my solution files
-- 
+- 1_3.rkt is modularized for use in other files, use `racket set_1/1_3.rkt run` to run the file
